@@ -1,0 +1,1012 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="Portfolio of Iradukunda Chris Ashraf, a frontend developer in Rwanda specializing in React, HTML, CSS and JavaScript."
+  />
+
+  <title>Iradukunda Chris Ashraf | Frontend Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080e1b;
+      --surface: #111b2e;
+      --surface-light: #16243b;
+      --text: #f1f5f9;
+      --muted: #a1aec2;
+      --blue: #60a5fa;
+      --border: #26354d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(1100px, 88%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 14, 27, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 19px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-contact {
+      padding: 9px 15px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 105px 0 90px;
+      background:
+        radial-gradient(
+          ellipse at 80% 20%,
+          rgba(59, 130, 246, 0.14),
+          transparent 45%
+        );
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.8fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 25px;
+      height: 2px;
+      background: var(--blue);
+    }
+
+    h1 {
+      margin: 23px 0;
+      font-size: clamp(38px, 5.5vw, 65px);
+      line-height: 1.18;
+      letter-spacing: -2px;
+      overflow-wrap: anywhere;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--blue);
+    }
+
+    .hero-description {
+      max-width: 590px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 19px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: #07111f;
+      border-color: var(--blue);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .profile-card {
+      padding: 30px 24px;
+      background: linear-gradient(145deg, #16243b, #0e1728);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    .avatar {
+      display: grid;
+      place-items: center;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+      color: white;
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    .profile-card h2 {
+      font-size: 19px;
+      line-height: 1.5;
+    }
+
+    .profile-card p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    .profile-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 22px 0;
+    }
+
+    .profile-details {
+      display: grid;
+      gap: 12px;
+      text-align: left;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .profile-details strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .profile-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      padding: 8px 11px;
+      border-radius: 20px;
+      background: rgba(96, 165, 250, 0.1);
+      color: #93c5fd;
+      font-size: 11px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #60a5fa;
+      border-radius: 50%;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 85px 0;
+      border-top: 1px solid rgba(38, 53, 77, 0.65);
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(27px, 4vw, 37px);
+      line-height: 1.3;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 14px;
+    }
+
+    .accent {
+      color: var(--blue);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 35px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 17px;
+      font-size: 14px;
+    }
+
+    .info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .info-card h3 {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+    }
+
+    .info-row:last-child {
+      border-bottom: 0;
+    }
+
+    .info-row span {
+      color: var(--muted);
+    }
+
+    .info-row strong {
+      text-align: right;
+      font-weight: 500;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 21px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-4px);
+    }
+
+    .skill-icon {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      background: var(--surface-light);
+      color: var(--blue);
+      border-radius: 10px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .learning-note {
+      margin-top: 22px;
+      padding: 15px 18px;
+      background: rgba(96, 165, 250, 0.07);
+      border-left: 3px solid var(--blue);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: #45638b;
+    }
+
+    .project-cover {
+      min-height: 150px;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 50% 50%,
+          rgba(96, 165, 250, 0.18),
+          transparent 70%),
+        #121e33;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project-symbol {
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .project-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex: 1;
+    }
+
+    .project-label {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .project-body h3 {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    .project-body p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .project-tags span {
+      padding: 5px 9px;
+      background: var(--surface-light);
+      color: #c1d8f7;
+      border-radius: 5px;
+      font-size: 10px;
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      padding: 45px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 90% 10%,
+          rgba(59, 130, 246, 0.16),
+          transparent 40%),
+        var(--surface);
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 12px 0;
+    }
+
+    .contact-box > p {
+      max-width: 560px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .email-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 100%;
+      padding: 13px 17px;
+      margin-bottom: 25px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(8, 14, 27, 0.45);
+    }
+
+    .email-card span {
+      color: var(--blue);
+    }
+
+    .email-card a {
+      overflow-wrap: anywhere;
+      font-size: 13px;
+    }
+
+    .contact-box .actions {
+      justify-content: center;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-inner strong {
+      color: var(--text);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .profile-card {
+        max-width: 430px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      .nav-inner {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 17px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+
+      section.content-section {
+        padding: 65px 0;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 28px 18px;
+      }
+
+      .email-card {
+        width: 100%;
+      }
+
+      .actions .button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+
+      <a href="#home" class="brand">
+        Ashraf<span>.</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="nav-contact">Contact Me ↗</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Frontend Developer · Rwanda</div>
+
+          <h1>
+            Iradukunda
+            <span>Chris Ashraf.</span>
+          </h1>
+
+          <p class="hero-description">
+            I'm a student and aspiring frontend developer building
+            my skills in React, HTML, CSS and JavaScript. My goal
+            is to create clean, responsive websites that help
+            people and businesses establish their online presence.
+          </p>
+
+          <div class="actions">
+            <a class="button button-primary" href="#projects">
+              Explore My Work ↘
+            </a>
+
+            <a class="button button-secondary"
+               href="mailto:ashrafchris7@gmail.com">
+              Contact Me ↗
+            </a>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="avatar">ICA</div>
+
+          <h2>Iradukunda Chris Ashraf</h2>
+          <p>Frontend Developer in Training</p>
+
+          <div class="profile-divider"></div>
+
+          <div class="profile-details">
+            <div>📍 <strong>Rwanda</strong></div>
+            <div>💻 <strong>Web Development</strong></div>
+            <div>🎓 <strong>Student & Developer</strong></div>
+            <div>✉️ <strong>ashrafchris7@gmail.com</strong></div>
+          </div>
+
+          <div class="profile-status">
+            <span class="status-dot"></span>
+            Open to suitable opportunities
+          </div>
+        </aside>
+
+      </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section class="content-section" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">A little about me</div>
+          <h2>Learning today. <span class="accent">Building tomorrow.</span></h2>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-text">
+            <p>
+              My name is Iradukunda Chris Ashraf, and I'm a student
+              in Rwanda working toward becoming a skilled web developer.
+            </p>
+
+            <p>
+              I work with HTML, CSS, JavaScript and React to build
+              websites. I'm also interested in databases and in
+              understanding how frontend applications connect to
+              the data behind them.
+            </p>
+
+            <p>
+              I'm looking for beginner-friendly freelance projects,
+              internships and junior opportunities where I can
+              contribute, learn from feedback and improve through
+              practical experience.
+            </p>
+          </div>
+
+          <div class="info-card">
+            <h3>Quick Information</h3>
+
+            <div class="info-row">
+              <span>Name</span>
+              <strong>Chris Ashraf</strong>
+            </div>
+
+            <div class="info-row">
+              <span>Location</span>
+              <strong>Rwanda</strong>
+            </div>
+
+            <div class="info-row">
+              <span>Main focus</span>
+              <strong>Frontend Development</strong>
+            </div>
+
+            <div class="info-row">
+              <span>Interested in</span>
+              <strong>Projects & Internships</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="content-section" id="skills">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">What I work with</div>
+          <h2>My <span class="accent">Technical Skills</span></h2>
+          <p>
+            Technologies I use or am developing experience with
+            through learning and practice.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card">
+            <div class="skill-icon">H5</div>
+            <h3>HTML</h3>
+            <p>Page structure and accessible content.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">C3</div>
+            <h3>CSS</h3>
+            <p>Layouts, styling and responsive design.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">JS</div>
+            <h3>JavaScript</h3>
+            <p>Interactive features and application logic.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">R</div>
+            <h3>React.js</h3>
+            <p>Reusable components and user interfaces.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">DB</div>
+            <h3>Databases</h3>
+            <p>Database concepts and data management.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">SQL</div>
+            <h3>SQL / MySQL</h3>
+            <p>Include practical SQL skills as you develop them.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">Git</div>
+            <h3>Git & GitHub</h3>
+            <p>Version control and sharing projects.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">UI</div>
+            <h3>Responsive UI</h3>
+            <p>Interfaces that adapt to different screen sizes.</p>
+          </article>
+
+        </div>
+
+        <div class="learning-note">
+          <strong>My approach:</strong> I keep learning through
+          practice projects. I aim to be honest about my experience
+          and improve with every project.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="content-section" id="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Selected work</div>
+          <h2>Projects & <span class="accent">Practice</span></h2>
+          <p>
+            A place to showcase practical work and demonstrate
+            my development skills to potential clients.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-cover">
+              <div class="project-symbol">WEB.</div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-label">Website Design</div>
+              <h3>Business Landing Page</h3>
+
+              <p>
+                A practice project for presenting a business,
+                its services, and contact information in a
+                clean, mobile-friendly layout.
+              </p>
+
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Responsive Design</span>
+              </div>
+
+              <!-- Add your real project link here -->
+              <a class="project-link"
+                 href="mailto:ashrafchris7@gmail.com?subject=Portfolio%20Project">
+                Ask about this project ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-cover">
+              <div class="project-symbol">JS +</div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-label">Frontend Practice</div>
+              <h3>Interactive Web Application</h3>
+
+              <p>
+                A space for a JavaScript or React application
+                demonstrating interactive components, state,
+                and a user-friendly interface.
+              </p>
+
+              <div class="project-tags">
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>UI</span>
+              </div>
+
+              <!-- Replace with your actual repository when ready -->
+              <a class="project-link"
+                 href="mailto:ashrafchris7@gmail.com?subject=Frontend%20Project">
+                Contact me ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p style="color: var(--muted); font-size: 11px; margin-top: 20px;">
+          Note: These are example portfolio entries. Replace them
+          with your completed projects and working demo links before
+          presenting them as finished work.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+      <div class="container">
+
+        <div class="contact-box">
+          <div class="eyebrow">Get in touch</div>
+
+          <h2>
+            Let's build something
+            <span class="accent">useful.</span>
+          </h2>
+
+          <p>
+            Do you have a suitable website project, internship,
+            or junior developer opportunity? I'd be glad to hear
+            about it and discuss how I can contribute.
+          </p>
+
+          <div class="email-card">
+            <span>✉</span>
+            <a href="mailto:ashrafchris7@gmail.com">
+              ashrafchris7@gmail.com
+            </a>
+          </div>
+
+          <div class="actions">
+            <a class="button button-primary"
+               href="mailto:ashrafchris7@gmail.com?subject=Web%20Development%20Opportunity">
+              Send Me an Email ↗
+            </a>
+
+            <!-- Replace this with your actual GitHub profile -->
+            <a class="button button-secondary"
+               href="https://github.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+              GitHub Profile ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <p>
+        © <span id="year"></span>
+        <strong>Iradukunda Chris Ashraf</strong>
+      </p>
+
+      <p>Designed and built with HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
